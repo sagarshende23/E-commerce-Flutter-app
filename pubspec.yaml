@@ -44,11 +44,32 @@ flutter:
    - images/w3.jpeg
    - images/w4.jpeg
    - images/m2.jpg
-   - images/redrose.jpg
+
    - images/dazy.jpg
+   - images/dutch.jpg
    - images/orangemargold.jpg
-   - images/yellowgenda.jpg
+   - images/rajnighanda.jpg
+   - images/redrose.jpg
    - images/whiterose.jpg
+   - images/ranjighanda.jpg
+   - images/mogralanger.jpg
+   - images/kudiyellow.jpg
+   - images/genda.jpg
+   - images/yellowgenda.jpg
+   - images/toro.jpg
+   - images/dutch.jpg
+   
+   - images/tr.jpg
+   - images/gerbera.jpg
+   - images/gladiolus.jpg
+   - images/kudiorange.jpg
+   - images/navrang.jpg
+   - images/orchindflower.jpg
+   - images/spingri.jpg
+   - images/ss.jpg
+   - images/yellowgenda.jpg
+
+
    - images/cats/tshirt.png
    - images/cats/dress.png
    - images/cats/formal.png
@@ -57,8 +78,10 @@ flutter:
    - images/cats/jeans.png
    - images/cats/accessories.png
    - images/products/blazer1.jpeg
-   - images/products/dress2.jpeg
-   - images/products/dress1.jpeg
+
+
+  
+     
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

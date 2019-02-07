@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:hello_new/product_page.dart';
-import 'package:hello_new/serach_bar.dart';
+
+import 'package:hello_new/other_page.dart';
+import 'package:hello_new/componets/products.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,73 +10,38 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
-  int getColorHexFromStr(String colorStr) {
-    colorStr = "FF" + colorStr;
-    colorStr = colorStr.replaceAll("#", "");
-    int val = 0;
-    int len = colorStr.length;
-    for (int i = 0; i < len; i++) {
-      int hexDigit = colorStr.codeUnitAt(i);
-      if (hexDigit >= 48 && hexDigit <= 57) {
-        val += (hexDigit - 48) * (1 << (4 * (len - 1 - i)));
-      } else if (hexDigit >= 65 && hexDigit <= 70) {
-        // A..F
-        val += (hexDigit - 55) * (1 << (4 * (len - 1 - i)));
-      } else if (hexDigit >= 97 && hexDigit <= 102) {
-        // a..f
-        val += (hexDigit - 87) * (1 << (4 * (len - 1 - i)));
-      } else {
-        throw new FormatException("An error occurred when converting a color");
-      }
-    }
-    return val;
-  }
-
-
-
-
-
   @override
-
   Widget build(BuildContext context) {
 
     Widget imagecarousel = new Container(
       height: 200.0,
-       child: Carousel(
-        boxFit: BoxFit.cover,
-        images: [
-          AssetImage('images/c1.jpg'),
-           AssetImage('images/m1.jpeg'),
-             AssetImage('images/w4.jpeg'),
-              AssetImage('images/w3.jpeg'),
-        ],
-        animationCurve: Curves.fastOutSlowIn,
-        autoplay: true,
-        animationDuration: Duration(milliseconds: 100),
-        dotSize: 5,
-        indicatorBgPadding: 5.0,
-        dotBgColor: Colors.transparent,
-
-      ),
-
+       child: ClipRRect(
+         borderRadius: BorderRadius.circular(10),
+         child: Carousel(
+          boxFit: BoxFit.cover,
+          images: [
+            AssetImage('images/genda.jpg'),
+             AssetImage('images/ranjighanda.jpg'),
+               AssetImage('images/mogralanger.jpg'),
+                AssetImage('images/kudiyellow.jpg'),
+          ],
+          animationCurve: Curves.fastOutSlowIn,
+          autoplay: true,
+          animationDuration: Duration(milliseconds: 100),
+          dotSize: 5,
+          indicatorBgPadding: 5.0,
+          dotBgColor: Colors.transparent,
+        ),
+       ),
     );
-
-
-
 
     return Scaffold(
       appBar: AppBar(
-        
-        title: Text("UNIQUE FLOWERS",
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 15,
-        ),),
+        title: Text("UNIQUE FLOWERS",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15)),
         backgroundColor: Colors.black,
         actions: <Widget>[
           IconButton(icon: Icon(Icons.search,color: Colors.white), onPressed: () {
-            showSearch(context: context, delegate: DataSearch());
+
           }, ),
           IconButton(icon: Icon(Icons.notifications,color: Colors.white), onPressed: () {}, ),
           IconButton(icon: Icon(Icons.shopping_cart,color: Colors.white), onPressed: () {}, ),
@@ -139,7 +105,7 @@ class _HomePageState extends State<HomePage> {
              Divider(),
 
              InkWell(
-               onTap: () {},
+               onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>  OtherPage("First Page"))),
                child: ListTile(
                  title: Text("About"),
                  leading: Icon(Icons.help, color: Colors.blue,),),
@@ -157,123 +123,77 @@ class _HomePageState extends State<HomePage> {
            ],
         ),
       ),
+ 
 
-
-      body: 
-      ListView(
-        
-
+      body: Column(
         children: <Widget>[
+          SizedBox(height: 10,),
+
+          Text("Top Flower List",
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+            decorationColor: Colors.black,
+            fontSize: 20,
+            color: Colors.black,
+          ),),
+          SizedBox(height: 10.0,),
           
-          imagecarousel,
-          ProductPage(),
+          
 
-        ],
+          Flexible(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2),
+                itemCount: productItems.length,
+                itemBuilder: (BuildContext context, int index){
+                  return Card(
+                    elevation: 3.0,                      
+                       
+                          child:Column(
+                          children: <Widget>[
+                            AspectRatio(
+                              aspectRatio: 18/11,
+                              child: Image.asset(productItems[index].itemImage,
+                               fit: BoxFit.fitWidth,),
+                              ),
+                              
+                             
+                             Expanded(child: Padding(
+                               padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+                               child: Column(
+                                 children: <Widget>[
+                                  
+                            Text(productItems[index].itemName,style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16.0 ),),
+                            SizedBox(height: 8.0),
+                            Text("₹${productItems[index].itemPrice}",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: Colors.green
+                            ),),
 
-      )
-    );
+                                 ],
+                               ),
+                             ),)
+                            
+                            
+
+
+
+                          ],
+                        ),
+
+
+                       
+
+                      
+                  );
+                },
+                
+              ),),
+            ],
+           ),
+           
+      );
   }
 }
 
-class DataSearch extends SearchDelegate<String>{
-
-  final flower = [
-    "RedRose",
-    "YellowRose",
-     "WHiteRose",
-     "Lily",
-     "Gulab",
-     "GendaPhool",
-     "RedRose",
-     "RedRose",
-
-  ];
-
-  final recentFlower = [
-     "RedRose",
-    "YellowRose",
-     "WHiteRose",
-     "Lily",
-
-  ];
-
-    
-
-
-  @override
-  List<Widget> buildActions(BuildContext context) {
-    // TODO: implement buildActions
-    return [
-      IconButton(
-        icon: Icon(Icons.clear),
-        onPressed: () {
-          query = "";
-        }
-      )
-    ];
-  }
-
-  @override
-  Widget buildLeading(BuildContext context) {
-    // TODO: implement buildLeading
-    return IconButton(
-      onPressed: (){
-        close(context, null);
-      },
-      icon: AnimatedIcon(
-        icon: AnimatedIcons.menu_arrow,
-        progress: transitionAnimation,
-      ),
-    );
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    // TODO: implement buildResults
-    return Container(
-      height: 100.0,
-      width: 100.0,
-          child: Card(
-        color: Colors.red,
-        shape: StadiumBorder(),
-        child: Center(
-          child: Text(query),
-        ),
-      ),
-    );
-    
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    // TODO: implement buildSuggestions
-     final suggestionList = query.isEmpty 
-     ? recentFlower 
-     : flower.where((p) => p.startsWith(query)).toList();
-
-
-     return ListView.builder(
-       itemBuilder: (context, index) => ListTile(
-         onTap: (){
-           showResults(context);
-         },
-         leading: Icon(Icons.location_city),
-         title: RichText(text: TextSpan(
-           text: suggestionList[index].substring(0,query.length),
-           style: TextStyle(
-             color: Colors.black,
-             fontWeight: FontWeight.bold
-           ),
-           children: [TextSpan(
-             text: suggestionList[index].substring(query.length),
-             style: TextStyle(color: Colors.grey)
-           ),
-           ]),
-       ),
-       ), 
-       itemCount: suggestionList.length,
-     );
-  }
-
-
-} 

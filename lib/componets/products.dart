@@ -4,9 +4,10 @@ class Product{
   String itemName;
   double itemPrice;
   String itemImage;
+  bool isFav;
   int id;
   
-Product.items({this.itemName, this.itemPrice, this.itemImage, this.id,
+Product.items({this.itemName, this.itemPrice, this.itemImage, this.isFav,this.id,
 });
 }
 
@@ -16,6 +17,7 @@ List<Product> productItems =[
     itemName: "Dutch",
     itemPrice: 200.0,
     itemImage: 'images/dutch.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -23,6 +25,7 @@ List<Product> productItems =[
     itemName: "Gerbera",
     itemPrice: 200.0,
     itemImage: 'images/gerbera.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -30,6 +33,7 @@ List<Product> productItems =[
     itemName: "Toro",
     itemPrice: 200.0,
     itemImage: 'images/toro.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -37,6 +41,7 @@ List<Product> productItems =[
     itemName: "Gladiolus",
     itemPrice: 200.0,
     itemImage: 'images/gladiolus.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -44,6 +49,7 @@ List<Product> productItems =[
     itemName: "TR",
     itemPrice: 200.0,
     itemImage: 'images/tr.jpg',
+    isFav: false,
   ),
 
   Product.items(
@@ -51,6 +57,7 @@ List<Product> productItems =[
     itemName: "Mongra Langer",
     itemPrice: 200.0,
     itemImage: 'images/mogralanger.jpg',
+    isFav: false,
   ),
 
   Product.items(
@@ -58,6 +65,7 @@ List<Product> productItems =[
     itemName: "RanjniGhanda",
     itemPrice: 200.0,
     itemImage: 'images/ranjighanda.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -65,6 +73,7 @@ List<Product> productItems =[
     itemName: "Navrang",
     itemPrice: 200.0,
     itemImage: 'images/navrang.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -72,6 +81,7 @@ List<Product> productItems =[
     itemName: "Kudi Orange",
     itemPrice: 200.0,
     itemImage: 'images/kudiyellow.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -79,6 +89,7 @@ List<Product> productItems =[
     itemName: "Genda",
     itemPrice: 200.0,
     itemImage: 'images/genda.jpg',
+    isFav: false,
   ),
 
   Product.items(
@@ -86,6 +97,7 @@ List<Product> productItems =[
     itemName: "Yellow Genda",
     itemPrice: 200.0,
     itemImage: 'images/yellowgenda.jpg',
+    isFav: false,
   ),
 
   Product.items(
@@ -93,6 +105,7 @@ List<Product> productItems =[
     itemName: "OrchidFlower",
     itemPrice: 200.0,
     itemImage: 'images/orchindflower.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -100,6 +113,7 @@ List<Product> productItems =[
     itemName: "Springri",
     itemPrice: 200.0,
     itemImage: 'images/spingri.jpg',
+    isFav: true,
   ),
 
 
@@ -108,6 +122,7 @@ List<Product> productItems =[
     itemName: "Gladiolus",
     itemPrice: 200.0,
     itemImage: 'images/gladiolus.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -115,6 +130,7 @@ List<Product> productItems =[
     itemName: "Dutch",
     itemPrice: 200.0,
     itemImage: 'images/dutch.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -122,6 +138,7 @@ List<Product> productItems =[
     itemName: "Kudi Orange",
     itemPrice: 200.0,
     itemImage: 'images/kudiyellow.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -129,6 +146,7 @@ List<Product> productItems =[
     itemName: "Genda",
     itemPrice: 200.0,
     itemImage: 'images/genda.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -136,6 +154,7 @@ List<Product> productItems =[
     itemName: "Yellow Genda",
     itemPrice: 200.0,
     itemImage: 'images/yellowgenda.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -143,6 +162,7 @@ List<Product> productItems =[
     itemName: "OrchidFlower",
     itemPrice: 200.0,
     itemImage: 'images/orchindflower.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -150,6 +170,7 @@ List<Product> productItems =[
     itemName: "Springri",
     itemPrice: 200.0,
     itemImage: 'images/spingri.jpg',
+    isFav: true,
   ),
 
 
@@ -158,6 +179,7 @@ List<Product> productItems =[
     itemName: "Gladiolus",
     itemPrice: 200.0,
     itemImage: 'images/gladiolus.jpg',
+    isFav: true,
   ),
 
   Product.items(
@@ -165,5 +187,6 @@ List<Product> productItems =[
     itemName: "Springri",
     itemPrice: 200.0,
     itemImage: 'images/spingri.jpg',
+    isFav: true,
   ),
 ];

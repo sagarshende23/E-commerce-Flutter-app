@@ -16,7 +16,7 @@ class DataSearch extends SearchDelegate<String>{
   final recentFlower = [
      "RedRose",
     "YellowRose",
-     "WHiteRose",
+     "WhiteRose",
      "Lily",
 
   ];

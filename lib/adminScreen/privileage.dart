@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
-class OrderHistory extends StatefulWidget {
+
+class Privilages extends StatefulWidget {
   @override
-  _OrderHistoryState createState() => _OrderHistoryState();
+  _PrivilagesState createState() => _PrivilagesState();
 }
 
-class _OrderHistoryState extends State<OrderHistory> {
+class _PrivilagesState extends State<Privilages> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("Order History"),
+        title: new Text("Privilages"),
         centerTitle: false,
       ),
       body: new Center(
         child: new Text(
-          "Order History",
+          "Privilages",
           style: new TextStyle(fontSize: 25.0),
         ),
       ),
